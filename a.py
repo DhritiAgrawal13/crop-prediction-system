@@ -209,7 +209,8 @@ def get_water_data():
     }
 
 def get_agri_recommendation(crop, soil, water, weather, season):
-    client = genai.Client(api_key="AIzaSyD3ju_3oFWTJ4wX97cBjqsAGy9B7_QmZmM")
+    GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
+    client = genai.Client(api_key=GEMINI_API_KEY)
 
     prompt = f"""
     Return ONLY valid JSON.
@@ -294,3 +295,4 @@ if st.button("Predict Crop & Recommendation"):
         st.json(json.loads(rec))
     except:
         st.text(rec)
+
