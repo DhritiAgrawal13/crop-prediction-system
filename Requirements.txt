@@ -1,6 +1,6 @@
 streamlit
 numpy
-scikit-learn
+sklearn
 requests
 google-generativeai>=0.3.0
 google-api-core
